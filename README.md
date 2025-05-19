@@ -9,13 +9,18 @@
 
 ## What's included
 
-- Ubuntu 20.04 (Focal)
+- Debian Bookworm
 - Nginx web server
-- PHP 7.4 with FPM
+- PHP 8.2 with FPM
 - Pre-configured Nginx and PHP integration
 
 ## Vagrant cli
+- git clone https://github.com/fungsi1984/vagrant-nginx.git
+- vagrant up
+- vagrant ssh
 - vagrant provision, for updating vagrant file
+- vagrant global-status
+- vagrant halt
 
 ## NGINX BASIC
 | Description                                              | Path/Folder              |
@@ -27,3 +32,11 @@
 | Log files (both access and error log)                    | `/var/log/nginx`         |
 | Temporary files                                          | `/var/lib/nginx`         |
 | Default virtual host files                               | `/usr/share/nginx/html`  |
+
+- Includes for Clean Configs
+```
+http {
+    include conf.d/compression.conf;
+    include ssl_config/*.conf;
+}
+```
